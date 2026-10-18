@@ -1,5 +1,8 @@
 # LatentWire
 
-Enterprise AI news site (lead magnet) with Plexo display ads.
+Enterprise AI news site. Each article is a Reddit lead magnet with Plexo as the only sponsor.
 
-Open `index.html` locally, or enable GitHub Pages on this repo.
+- `index.html`: homepage
+- `articles/<slug>.html`: one file per article
+- `_docs/STYLE-GUIDE.md`: look, feel and rules for new articles
+- `_docs/article-template.html`: starting point for a new article
