@@ -1,3 +1,5 @@
-# Latent Wire
+# LatentWire
 
-Repository for the Latent Wire project.
+Enterprise AI news site (lead magnet) with Plexo display ads.
+
+Open `index.html` locally, or enable GitHub Pages on this repo.
