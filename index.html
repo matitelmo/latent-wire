@@ -15,14 +15,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home">
   <header class="masthead">
     <div class="topbar">
       <div class="wrap topbar-inner">
-        <span class="mono">Sat, Oct 17, 2026</span>
-        <div class="ticker mono" aria-label="Market snapshot">
-          <span>ACN <b>224.92</b> <em class="up">+4.63%</em></span>
-          <span>NASDAQ <b>Software rally</b></span>
+        <span class="mono">Sun, Oct 18, 2026</span>
+        <div class="ticker mono" aria-label="This week in figures">
+          <span>GPT-4o API sunset <b>Jan 14, 2027</b></span>
+          <span>Modal valuation <b>$15.75B</b></span>
         </div>
         <a class="topbar-link" href="#newsletter">Newsletter</a>
       </div>
@@ -35,135 +35,370 @@
       <p class="tagline">Enterprise AI, without the press release.</p>
       <a class="subscribe" href="#newsletter">Subscribe</a>
     </div>
-    <nav class="sections" aria-label="On this page">
+    <nav class="sections" aria-label="Sections">
       <div class="wrap sections-inner">
-        <a href="#top-story" class="is-on">Top story</a>
-        <a href="#wire">The Wire</a>
-        <a href="#numbers">By the numbers</a>
-        <a href="#inside">Inside the story</a>
+        <a href="#top" class="is-on">Top stories</a>
+        <a href="#agents">Agents at work</a>
+        <a href="#models">Models</a>
+        <a href="#money">Money</a>
+        <a href="#security">Security</a>
+        <a href="#numbers">The week in numbers</a>
         <a href="#newsletter">Briefing</a>
       </div>
     </nav>
   </header>
 
-  <aside class="wrap pk-top">
-    <span class="pk-tag">Sponsored · Plexo</span>
-    <a class="pk-lb" href="https://www.useplexo.ai/?utm_source=reddit&amp;utm_medium=latentwire&amp;utm_campaign=homepage&amp;utm_content=top" target="_blank" rel="noopener sponsored">
-      <img src="plexo-mark.png" alt="" width="44" height="44">
-      <span class="pk-lb-copy">
-        <b>Make your company ready for AI agents.</b>
-        <span>Interview everyone. Map the work. Know what AI should take. Free audit: five people, one workflow, seven days.</span>
-      </span>
-      <span class="pk-btn">Get the free audit →</span>
-    </a>
-  </aside>
+  <div class="wrap trending" aria-label="Trending">
+    <span class="trending-label mono">Trending</span>
+    <a href="articles/accenture-claude-spending-cap.html">Accenture's $29 cap</a>
+    <a href="#gpt4o">GPT-4o sunset</a>
+    <a href="#passport">AI Passport</a>
+    <a href="#daimler">AI on call</a>
+    <a href="#muse">Muse Spark Open</a>
+    <a href="#money">Token budgets</a>
+  </div>
 
   <main id="main">
-    <section class="wrap front" id="top-story">
-      <a class="lead-card" href="articles/accenture-claude-spending-cap.html">
-        <div class="chart" role="img" aria-label="Bar chart: Accenture's $29 monthly allowance compared with $500 and $1,000 of reported monthly Claude Code usage">
-          <p class="chart-title mono">Monthly Claude spend per consultant</p>
-          <div class="bars">
-            <div class="bar-row"><span class="bar-label">Company-funded cap</span><span class="bar cap" style="--w: 2.9%"></span><span class="bar-val">$29</span></div>
-            <div class="bar-row"><span class="bar-label">Reported usage, low end</span><span class="bar" style="--w: 50%"></span><span class="bar-val">$500</span></div>
-            <div class="bar-row"><span class="bar-label">Reported usage, high end</span><span class="bar" style="--w: 100%"></span><span class="bar-val">$1,000</span></div>
-          </div>
-        </div>
-        <p class="crumbs mono"><span>Enterprise</span><span>/</span><span class="kicker">Analysis</span></p>
-        <h1>Accenture caps staff Claude spending at $29 a month. Some consultants were burning $1,000</h1>
-        <p class="dek">An internal memo moves AI token costs onto project budgets. It's a preview of the bill every company running AI agents is about to get.</p>
-        <p class="lead-meta mono"><span>LatentWire Staff</span><span>Oct 17, 2026</span><span>4 min read</span><span class="read-more">Read the story →</span></p>
-      </a>
+    <section class="wrap front" id="top" aria-label="Top stories">
+      <div class="front-side">
+        <article class="story-card" id="daimler">
+          <a href="https://aws.amazon.com/blogs/industries/automating-incident-resolution-with-a-multi-agent-self-healing-sre-solution-on-aws/" target="_blank" rel="noopener">
+            <div class="tile" role="img" aria-label="Bar chart: time to resolve incidents fell from two to three hours to about 15 minutes">
+              <p class="tile-label mono">Time to resolve an incident</p>
+              <div class="mini-bars">
+                <div><span>Before</span><i style="--w: 100%"></i><b>2–3 h</b></div>
+                <div><span>After</span><i class="cap" style="--w: 9%"></i><b>~15 min</b></div>
+              </div>
+            </div>
+            <p class="kicker mono">Agents at work</p>
+            <h2>Daimler Truck's AI agents cut incident fixes from hours to about 15 minutes. A human still signs off on each one</h2>
+            <p class="card-dek">A multi-agent system watching a portal used by more than 130,000 people opens pull requests. Engineers approve every one in Microsoft Teams before it ships.</p>
+            <p class="card-meta mono"><span>AWS Industries Blog</span><time datetime="2026-10-12">Oct 12</time></p>
+          </a>
+        </article>
 
-      <section class="wire" id="wire">
-        <h2 class="rail-head">The Wire</h2>
+        <article class="story-card compact" id="passport">
+          <a href="https://siliconangle.com/2026/10/15/servicenow-adds-ai-agent-controls-and-employee-automation-tools/" target="_blank" rel="noopener">
+            <p class="kicker mono">Governance</p>
+            <h3>ServiceNow wants every AI agent to carry a passport, and an off switch</h3>
+            <p class="card-dek">In the demo, an agent capped at $25 refunds pushed an $18 refund through. A $40 request went to a person.</p>
+            <p class="card-meta mono"><span>SiliconANGLE</span><time datetime="2026-10-15">Oct 15</time></p>
+          </a>
+        </article>
+      </div>
+
+      <article class="lead-card">
+        <a href="articles/accenture-claude-spending-cap.html">
+          <div class="chart" role="img" aria-label="Bar chart: Accenture's $29 monthly allowance compared with $500 and $1,000 of reported monthly Claude Code usage">
+            <p class="chart-title mono">Monthly Claude spend per consultant</p>
+            <div class="bars">
+              <div class="bar-row"><span class="bar-label">Company-funded cap</span><span class="bar cap" style="--w: 2.9%"></span><span class="bar-val">$29</span></div>
+              <div class="bar-row"><span class="bar-label">Reported usage, low end</span><span class="bar" style="--w: 50%"></span><span class="bar-val">$500</span></div>
+              <div class="bar-row"><span class="bar-label">Reported usage, high end</span><span class="bar" style="--w: 100%"></span><span class="bar-val">$1,000</span></div>
+            </div>
+          </div>
+          <p class="crumbs mono"><span>Enterprise</span><span>/</span><span class="kicker">Analysis</span></p>
+          <h1>Accenture caps staff Claude spending at $29 a month. Some consultants were burning $1,000</h1>
+          <p class="dek">An internal memo moves AI token costs onto project budgets. It's a preview of the bill every company running AI agents is about to get.</p>
+          <p class="lead-meta mono"><span>LatentWire Staff</span><time datetime="2026-10-17">Oct 17, 2026</time><span>4 min read</span><span class="read-more">Read the story →</span></p>
+        </a>
+        <ul class="lead-related">
+          <li><a href="articles/accenture-claude-spending-cap.html#memo">What the memo actually says</a></li>
+          <li><a href="articles/accenture-claude-spending-cap.html#agents">Why $29 doesn't cover agents</a></li>
+          <li><a href="articles/accenture-claude-spending-cap.html#margin">The margin math behind the cap</a></li>
+        </ul>
+      </article>
+
+      <section class="latest" aria-labelledby="latest-head">
+        <h2 class="rail-head" id="latest-head">Latest</h2>
         <ol>
-          <li><a href="articles/accenture-claude-spending-cap.html#memo"><time datetime="2026-10-15">Oct 15 · Memo</time><span>Accenture tells Claude users "all costs are consumption-based"</span></a></li>
-          <li><a href="articles/accenture-claude-spending-cap.html#memo"><time datetime="2026-10-15">Oct 15 · Policy</time><span>Usage over $29 a month now billed to project codes</span></a></li>
-          <li><a href="articles/accenture-claude-spending-cap.html#memo"><time datetime="2026-10-15">Oct 15 · Access</time><span>A license "does not guarantee indefinite or ongoing access to Claude," memo warns</span></a></li>
-          <li><a href="articles/accenture-claude-spending-cap.html#margin"><time>Context · Margins</time><span>Fixed-price work is more than 65% of Accenture's bookings</span></a></li>
-          <li><a href="articles/accenture-claude-spending-cap.html#unknowns"><time datetime="2026-10-15">Oct 15 · Markets</time><span>ACN rises 4.63% to $224.92 in a broad software rally</span></a></li>
-          <li><a href="articles/accenture-claude-spending-cap.html#agents"><time datetime="2026-10-01">Oct 1 · Earnings</time><span>Julie Sweet: falling token costs will let companies use AI "in more places and at scale"</span></a></li>
+          <li><a href="https://itbrief.com.au/story/datadog-launches-scout-1-0-for-production-issue-checks" target="_blank" rel="noopener"><time datetime="2026-10-16">Oct 16</time><span>Datadog trains its own model to triage production alerts</span></a></li>
+          <li><a href="https://solutionsreview.com/ai-news-for-the-week-of-october-16-updates-from-digitalocean-linux-foundation-onestream-more/" target="_blank" rel="noopener"><time datetime="2026-10-16">Oct 16</time><span>Dataiku launches a product to find every agent a company is running</span></a></li>
+          <li><a href="https://research.meta.ai/blog/muse-spark-open" target="_blank" rel="noopener"><time datetime="2026-10-15">Oct 15</time><span>Meta releases open weights for Muse Spark Open, built for coding agents</span></a></li>
+          <li><a href="https://snyk.io/news/snyk-launches-evo-agentic-appsec/" target="_blank" rel="noopener"><time datetime="2026-10-15">Oct 15</time><span>Snyk sends a team of security agents after code that agents wrote</span></a></li>
+          <li><a href="https://www.infoworld.com/article/4235774/google-aims-to-make-bigquery-spending-on-ai-functions-more-predictable-with-token-quotas.html" target="_blank" rel="noopener"><time datetime="2026-10-15">Oct 15</time><span>Google puts daily token quotas on BigQuery's AI functions</span></a></li>
+          <li><a href="https://www.techrepublic.com/article/news-nvidia-runai-open-source-free-paid/" target="_blank" rel="noopener"><time datetime="2026-10-15">Oct 15</time><span>Nvidia makes Run, formerly Run:ai, open source</span></a></li>
+          <li><a href="https://www.iex.nl/Nieuws/881119/Exclusive-Behind-AI-industrys-call-for-independent-reviews-a-fight-over-what-gets-made-public.aspx" target="_blank" rel="noopener"><time datetime="2026-10-13">Oct 13</time><span>Reuters: Anthropic and OpenAI sought control over what outside evaluators publish</span></a></li>
         </ol>
       </section>
     </section>
 
-    <div class="wrap layout">
-      <div class="home-main">
-        <section class="numbers-strip" id="numbers">
-          <h2 class="rail-head">By the numbers</h2>
-          <dl>
-            <div><dt>$29</dt><dd>Monthly Claude allowance per Accenture employee</dd></div>
-            <div><dt>$1,000</dt><dd>Top reported monthly Claude Code spend</dd></div>
-            <div><dt>65%+</dt><dd>Bookings on fixed-price contracts</dd></div>
-            <div><dt>814,000</dt><dd>Accenture employees</dd></div>
-          </dl>
-        </section>
-
-        <aside class="pk-inline">
-          <span class="pk-tag">Sponsored · Plexo</span>
-          <a class="pk-native" href="https://www.useplexo.ai/?utm_source=reddit&amp;utm_medium=latentwire&amp;utm_campaign=homepage&amp;utm_content=inline" target="_blank" rel="noopener sponsored">
-            <div class="pk-native-copy">
-              <p class="pk-native-title">Per-seat AI budgets break when agents arrive. Budget by workflow instead.</p>
-              <p>Plexo maps how the work really runs, every handoff, tool and exception, so you know which workflows deserve an agent and which stay a human decision.</p>
-              <span class="pk-native-cta">See your AI opportunities →</span>
+    <section class="wrap top-row" aria-label="More top stories">
+      <article class="story-card" id="gpt4o">
+        <a href="https://thenewstack.io/openai-gpt4o-api-shutdown/" target="_blank" rel="noopener">
+          <div class="tile" role="img" aria-label="Bar chart: six months of promised notice against three months given">
+            <p class="tile-label mono">Deprecation notice, months</p>
+            <div class="mini-bars">
+              <div><span>Policy</span><i style="--w: 100%"></i><b>6</b></div>
+              <div><span>GPT-4o</span><i class="cap" style="--w: 50%"></i><b>~3</b></div>
             </div>
-            <div class="pk-map" aria-hidden="true">
-              <span><i>01</i>Gate arrival</span>
-              <span><i>02</i>Yard check</span>
-              <span class="hot"><i>03</i>WhatsApp to Treasury <em>4.8h</em></span>
-              <span><i>04</i>Manual ERP entry</span>
+          </div>
+          <p class="kicker mono">Models</p>
+          <h3>OpenAI promised six months' notice. GPT-4o API users are getting about three</h3>
+          <p class="card-dek">GPT-4o, GPT-4.1 and their mini versions leave the API on January 14, 2027, fine-tuned versions included.</p>
+          <p class="card-meta mono"><span>The New Stack</span><time datetime="2026-10-15">Oct 15</time></p>
+        </a>
+      </article>
+
+      <article class="story-card">
+        <a href="https://siliconangle.com/2026/10/14/ai-cloud-startup-modal-raises-750m-at-15-75b-valuation/" target="_blank" rel="noopener">
+          <div class="tile ink">
+            <p class="tile-label mono">Series D</p>
+            <p class="tile-num">$750M</p>
+            <p class="tile-cap">at a $15.75 billion valuation</p>
+          </div>
+          <p class="kicker mono">Money</p>
+          <h3>Modal raises $750 million as its revenue run rate passes $1 billion</h3>
+          <p class="card-dek">Nearly a third of the AI cloud's revenue comes from Sandboxes, its hosted containers for AI workloads.</p>
+          <p class="card-meta mono"><span>SiliconANGLE</span><time datetime="2026-10-14">Oct 14</time></p>
+        </a>
+      </article>
+
+      <article class="story-card">
+        <a href="https://newsroom.workday.com/2026-10-13-Workday-and-Anthropic-Announce-New-Partnership-to-Connect-Reasoning-to-the-Rules-That-Run-the-Business,-Wherever-People-Choose-to-Work" target="_blank" rel="noopener">
+          <div class="tile soft">
+            <p class="tile-label mono">HR + finance</p>
+            <p class="tile-pair"><span>Workday</span><em>⇄</em><span>Claude</span></p>
+            <p class="tile-cap">Tasks pass both ways over MCP</p>
+          </div>
+          <p class="kicker mono">Agents at work</p>
+          <h3>Workday lets Claude into HR and finance, on Workday's rules</h3>
+          <p class="card-dek">Every request follows the customer's existing Workday permissions, and the user confirms every change.</p>
+          <p class="card-meta mono"><span>Workday newsroom</span><time datetime="2026-10-13">Oct 13</time></p>
+        </a>
+      </article>
+
+      <article class="story-card" id="muse">
+        <a href="https://research.meta.ai/blog/muse-spark-open" target="_blank" rel="noopener">
+          <div class="tile soft">
+            <p class="tile-label mono">Parameters</p>
+            <p class="tile-num">816B</p>
+            <p class="tile-cap">42B active · 1M-token context</p>
+          </div>
+          <p class="kicker mono">Models</p>
+          <h3>Meta's Muse Spark Open puts a frontier-scale coding agent model on open weights</h3>
+          <p class="card-dek">The weights download free, under Meta's own license rather than an open-source one.</p>
+          <p class="card-meta mono"><span>Meta AI</span><time datetime="2026-10-15">Oct 15</time></p>
+        </a>
+      </article>
+    </section>
+
+    <section class="wrap desk" id="agents" aria-labelledby="agents-head">
+      <h2 class="desk-head" id="agents-head">Agents at work</h2>
+      <div class="desk-grid">
+        <article class="story-card feature">
+          <a href="https://www.microsoft.com/en-us/copilot/blog/copilot-studio/delegate-shared-business-processes-to-agents-that-are-more-persistent-and-proactive-with-microsoft-copilot-studio/" target="_blank" rel="noopener">
+            <div class="tile ink wide">
+              <p class="tile-label mono">Copilot Studio</p>
+              <p class="tile-quote">Agents that belong to the organization, not to any one employee.</p>
             </div>
+            <h3>Microsoft gives Copilot Studio agents their own accounts and a memory of the process</h3>
+            <p class="card-dek">Agent accounts, business process memory and triggers let agents start work on their own and outlast the person who set them up. The features roll out through Microsoft's Frontier program.</p>
+            <p class="card-meta mono"><span>Microsoft Copilot Blog</span><time datetime="2026-10-15">Oct 15</time></p>
           </a>
-        </aside>
-
-        <section class="inside" id="inside">
-          <h2 class="rail-head">Inside the story</h2>
-          <ol>
-            <li><a href="articles/accenture-claude-spending-cap.html#memo"><span class="n">01</span><b>What the memo actually says</b><span>Consumption billing, project codes, and access that can be revoked.</span></a></li>
-            <li><a href="articles/accenture-claude-spending-cap.html#agents"><span class="n">02</span><b>Why $29 doesn't cover agents</b><span>A chat subscription price meets autonomous coding tools.</span></a></li>
-            <li><a href="articles/accenture-claude-spending-cap.html#margin"><span class="n">03</span><b>The margin math behind the cap</b><span>Fixed-price deals put unpriced AI costs on Accenture.</span></a></li>
-          </ol>
-        </section>
-
-        <aside class="pk-inline pk-mobile">
-          <span class="pk-tag">Sponsored · Plexo</span>
-          <a class="pk-box" href="https://www.useplexo.ai/?utm_source=reddit&amp;utm_medium=latentwire&amp;utm_campaign=homepage&amp;utm_content=box" target="_blank" rel="noopener sponsored">
-            <img src="plexo-mark.png" alt="" width="40" height="40">
-            <p class="pk-box-title">Your team already knows where AI belongs.</p>
-            <p class="pk-box-sub">Ask all of them at once.</p>
-            <span class="pk-btn">Get the free audit →</span>
-          </a>
-        </aside>
-
-        <section class="newsletter" id="newsletter">
-          <h3>The LatentWire briefing</h3>
-          <p>What enterprise AI actually costs, and who's paying. One email, every weekday.</p>
-          <form>
-            <label class="vh" for="nl-email">Email address</label>
-            <input id="nl-email" type="email" placeholder="you@company.com" required>
-            <button type="submit">Sign up</button>
-          </form>
-        </section>
-      </div>
-
-      <aside class="rail">
-        <div class="pk-tower">
-          <span class="pk-tag">Sponsored · Plexo</span>
-          <a class="pk-sky" href="https://www.useplexo.ai/?utm_source=reddit&amp;utm_medium=latentwire&amp;utm_campaign=homepage&amp;utm_content=tower" target="_blank" rel="noopener sponsored">
-            <div class="pk-brand"><img src="plexo-mark.png" alt="" width="28" height="28"><span>Plexo</span></div>
-            <p class="pk-sky-title">Stop rationing AI.<br><span>Start aiming it.</span></p>
-            <div class="pk-chat">
-              <p class="q">So the ticket is closed in the system. Where was it actually closed?</p>
-              <p class="a">In the group chat. I copy it over in the morning.</p>
-              <p class="q">How long does the copying take?</p>
-            </div>
-            <p class="pk-sky-meta mono">Interview 14 of 22 · by role, never by name</p>
-            <span class="pk-btn light">Free AI Opportunity Audit →</span>
-          </a>
+        </article>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://runtimewire.com/article/cognition-devin-oncall-production-incidents" target="_blank" rel="noopener">
+              <h3>Cognition puts Devin on call for production incidents</h3>
+              <p class="card-dek">It investigates alerts and opens a tested pull request for an engineer to review. No price yet.</p>
+              <p class="card-meta mono"><span>RuntimeWire</span><time datetime="2026-10-15">Oct 15</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://siliconangle.com/2026/10/14/groundcover-lets-claude-and-codex-hand-production-investigations-to-its-own-agent/" target="_blank" rel="noopener">
+              <h3>groundcover lets Claude and Codex hand production investigations to its own agent</h3>
+              <p class="card-meta mono"><span>SiliconANGLE</span><time datetime="2026-10-14">Oct 14</time></p>
+            </a>
+          </article>
         </div>
-      </aside>
-    </div>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-loops/" target="_blank" rel="noopener">
+              <h3>Salesforce agrees to buy Loops, its second AI deal in two weeks</h3>
+              <p class="card-dek">The analytics startup goes into Tableau. Listen Labs, signed September 29, is still pending.</p>
+              <p class="card-meta mono"><span>Salesforce</span><time datetime="2026-10-12">Oct 12</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://solutionsreview.com/ai-news-for-the-week-of-october-16-updates-from-digitalocean-linux-foundation-onestream-more/" target="_blank" rel="noopener">
+              <h3>DigitalOcean gives its managed agents live web access through Bright Data</h3>
+              <p class="card-meta mono"><span>Solutions Review</span><time datetime="2026-10-16">Oct 16</time></p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap desk" id="models" aria-labelledby="models-head">
+      <h2 class="desk-head" id="models-head">Models</h2>
+      <div class="desk-grid">
+        <article class="story-card feature">
+          <a href="https://venturebeat.com/orchestration/openais-ai-agent-platform-is-used-by-twice-as-many-companies-as-anthropics-new-venturebeat-survey-finds" target="_blank" rel="noopener">
+            <div class="tile wide" role="img" aria-label="Bar chart: 62% replaced a production model, 59% of those saw performance drop, 19% said a swap took almost no work">
+              <p class="tile-label mono">Swapping the model under a production app</p>
+              <div class="mini-bars">
+                <div><span>Swapped a model</span><i style="--w: 62%"></i><b>62%</b></div>
+                <div><span>Of those, got worse</span><i class="cap" style="--w: 59%"></i><b>59%</b></div>
+                <div><span>Swap took no real work</span><i style="--w: 19%"></i><b>19%</b></div>
+              </div>
+            </div>
+            <h3>Most companies that swapped a production model saw it get worse</h3>
+            <p class="card-dek">VentureBeat's opt-in surveys also found OpenAI's agent platform in use at 43% of companies against 22% for Anthropic's. Among companies still choosing, Anthropic led 33% to 30%.</p>
+            <p class="card-meta mono"><span>VentureBeat</span><time datetime="2026-10-13">Oct 13</time></p>
+          </a>
+        </article>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://itbrief.com.au/story/datadog-launches-scout-1-0-for-production-issue-checks" target="_blank" rel="noopener">
+              <h3>Datadog says its new Scout model matches frontier models at three to eight times lower cost</h3>
+              <p class="card-dek">The comparison uses Datadog's own scenarios. Scout is in closed preview with no price.</p>
+              <p class="card-meta mono"><span>IT Brief Australia</span><time datetime="2026-10-16">Oct 16</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://openai.com/index/atlassian-partnership/" target="_blank" rel="noopener">
+              <h3>GPT-6 models will power agents across Atlassian's Rovo</h3>
+              <p class="card-meta mono"><span>OpenAI</span><time datetime="2026-10-06">Oct 6</time></p>
+            </a>
+          </article>
+        </div>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://www.iex.nl/Nieuws/881119/Exclusive-Behind-AI-industrys-call-for-independent-reviews-a-fight-over-what-gets-made-public.aspx" target="_blank" rel="noopener">
+              <h3>Behind the call for independent AI reviews, a fight over what gets published</h3>
+              <p class="card-dek">Anthropic and OpenAI sought significant control over what outside evaluators can release, two people told Reuters.</p>
+              <p class="card-meta mono"><span>Reuters</span><time datetime="2026-10-13">Oct 13</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://newsletter.pragmaticengineer.com/p/building-resilient-systems" target="_blank" rel="noopener">
+              <h3>Design for the day your model is down, rate-limited or out of tokens</h3>
+              <p class="card-meta mono"><span>The Pragmatic Engineer</span><time datetime="2026-10-13">Oct 13</time></p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers-band" id="numbers" aria-labelledby="numbers-head">
+      <div class="wrap">
+        <h2 class="band-head mono" id="numbers-head">The week in numbers</h2>
+        <dl>
+          <div><dt>$29</dt><dd>Accenture's monthly Claude allowance per employee</dd></div>
+          <div><dt>130,000+</dt><dd>Users on the Daimler Truck portal now patched by agents</dd></div>
+          <div><dt>59%</dt><dd>Of companies that swapped a production model saw performance drop</dd></div>
+          <div><dt>Jan 14</dt><dd>When GPT-4o and GPT-4.1 leave OpenAI's API</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="wrap desk" id="money" aria-labelledby="money-head">
+      <h2 class="desk-head" id="money-head">Money</h2>
+      <div class="desk-grid">
+        <article class="story-card feature">
+          <a href="https://www.infoworld.com/article/4235774/google-aims-to-make-bigquery-spending-on-ai-functions-more-predictable-with-token-quotas.html" target="_blank" rel="noopener">
+            <div class="tile soft wide">
+              <p class="tile-label mono">Default daily quota, per project</p>
+              <p class="tile-num">200B</p>
+              <p class="tile-cap">input tokens · 20 billion output tokens</p>
+            </div>
+            <h3>Google puts token quotas on BigQuery's AI functions. Finance still can't see the dollars</h3>
+            <p class="card-dek">Queries that hit the limit fail, and a quota reached mid-query can return partial results. Analysts note the caps count tokens, not spend by team.</p>
+            <p class="card-meta mono"><span>InfoWorld</span><time datetime="2026-10-15">Oct 15</time></p>
+          </a>
+        </article>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="articles/accenture-claude-spending-cap.html#margin">
+              <p class="kicker mono">LatentWire analysis</p>
+              <h3>Fixed-price contracts make Accenture's AI bill its own problem</h3>
+              <p class="card-meta mono"><span>LatentWire</span><time datetime="2026-10-17">Oct 17</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://www.techrepublic.com/article/news-nvidia-runai-open-source-free-paid/" target="_blank" rel="noopener">
+              <h3>Nvidia gives away Run. What stays paid is the support</h3>
+              <p class="card-dek">The GPU orchestrator, including its control plane, is now under Apache 2.0.</p>
+              <p class="card-meta mono"><span>TechRepublic</span><time datetime="2026-10-15">Oct 15</time></p>
+            </a>
+          </article>
+        </div>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://www.calcalistech.com/ctechnews/article/rypqhecozg" target="_blank" rel="noopener">
+              <h3>Salesforce's Loops deal is estimated at about $30 million</h3>
+              <p class="card-dek">Neither company has disclosed the price.</p>
+              <p class="card-meta mono"><span>Ctech</span><time datetime="2026-10-12">Oct 12</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://cxtoday.com/ai-agent-observability-just-changed-again" target="_blank" rel="noopener">
+              <h3>Grafana starts charging for agent observability at $1.50 per 1,000 generations</h3>
+              <p class="card-meta mono"><span>CX Today</span><time datetime="2026-10-14">Oct 14</time></p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap desk" id="security" aria-labelledby="security-head">
+      <h2 class="desk-head" id="security-head">Security</h2>
+      <div class="desk-grid">
+        <article class="story-card feature">
+          <a href="https://www.paloaltonetworks.com/blog/ai-security/agentic-innovation-meets-enterprise-control/" target="_blank" rel="noopener">
+            <div class="tile ink wide">
+              <p class="tile-label mono">Runtime protection</p>
+              <p class="tile-pair"><span>Palo Alto</span><em>→</em><span>Claude Enterprise</span></p>
+            </div>
+            <h3>Palo Alto Networks builds runtime protection directly into Claude Enterprise</h3>
+            <p class="card-dek">The company is also scanning agent skills, not just models, and adding tool security and routing to its AI gateway.</p>
+            <p class="card-meta mono"><span>Palo Alto Networks</span><time datetime="2026-10-15">Oct 15</time></p>
+          </a>
+        </article>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://snyk.io/news/snyk-launches-evo-agentic-appsec/" target="_blank" rel="noopener">
+              <h3>Snyk's new security agents queue risky fixes for approval instead of merging them</h3>
+              <p class="card-dek">One blocks packages whose names AI agents tend to hallucinate.</p>
+              <p class="card-meta mono"><span>Snyk</span><time datetime="2026-10-15">Oct 15</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://cxtoday.com/ai-agent-observability-just-changed-again" target="_blank" rel="noopener">
+              <h3>Splunk patches a request-forgery flaw in its MCP server</h3>
+              <p class="card-meta mono"><span>CX Today</span><time datetime="2026-10-14">Oct 14</time></p>
+            </a>
+          </article>
+        </div>
+        <div class="desk-list">
+          <article class="story-card compact">
+            <a href="https://www.egnyte.com/press-releases/egnyte-unveils-context-studio-and-ai-control-center-for-more-accurate-secure-and-cost-efficient-ai" target="_blank" rel="noopener">
+              <h3>Egnyte adds one dashboard to see which sensitive files each agent can reach</h3>
+              <p class="card-meta mono"><span>Egnyte</span><time datetime="2026-10-15">Oct 15</time></p>
+            </a>
+          </article>
+          <article class="story-card compact">
+            <a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank" rel="noopener">
+              <h3>Anthropic widens access to its strongest cyber capabilities for verified security teams</h3>
+              <p class="card-meta mono"><span>Anthropic</span><time datetime="2026-10-06">Oct 6</time></p>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap newsletter home-newsletter" id="newsletter">
+      <div>
+        <h3>The LatentWire briefing</h3>
+        <p>What enterprise AI actually costs, and who's paying. One email, every weekday.</p>
+      </div>
+      <form>
+        <label class="vh" for="nl-email">Email address</label>
+        <input id="nl-email" type="email" placeholder="you@company.com" required>
+        <button type="submit">Sign up</button>
+      </form>
+    </section>
   </main>
 
   <footer class="footer">
@@ -172,18 +407,17 @@
         <a class="logo small" href="index.html"><span class="logo-mark" aria-hidden="true"><i></i><i></i><i></i></span><span class="logo-word">Latent<span>Wire</span></span></a>
         <p>Independent coverage of enterprise AI, agents and the economics behind them.</p>
       </div>
+      <nav class="footer-links" aria-label="Sections">
+        <a href="#top">Top stories</a>
+        <a href="#agents">Agents at work</a>
+        <a href="#models">Models</a>
+        <a href="#money">Money</a>
+        <a href="#security">Security</a>
+        <a href="#newsletter">Briefing</a>
+      </nav>
     </div>
-    <p class="wrap disclosure">Sponsored placements on this page are from Plexo. Sponsors have no input on editorial coverage. © 2026 LatentWire.</p>
+    <p class="wrap disclosure">Stories credited to another outlet link to that outlet's original reporting. © 2026 LatentWire.</p>
   </footer>
-
-  <aside class="pk-dock" id="pk-dock">
-    <a href="https://www.useplexo.ai/?utm_source=reddit&amp;utm_medium=latentwire&amp;utm_campaign=homepage&amp;utm_content=dock" target="_blank" rel="noopener sponsored">
-      <img src="plexo-mark.png" alt="" width="30" height="30">
-      <span><b>Know what AI should take</b> before you pay for the tokens.</span>
-      <span class="pk-btn">Free audit →</span>
-    </a>
-    <button type="button" id="pk-dock-close" aria-label="Close">×</button>
-  </aside>
 
   <script src="site.js"></script>
 </body>
