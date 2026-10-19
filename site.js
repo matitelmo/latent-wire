@@ -36,9 +36,8 @@
     });
   });
 
-  // Plexo unit clicks → Vercel Web Analytics custom event "PlexoClick"
+  // Plexo unit clicks → GA4 "plexo_click" (+ Vercel if present)
   function trackPlexoClick(anchor) {
-    if (typeof window.va !== 'function') return;
     let unit = 'unknown';
     let campaign = 'unknown';
     try {
@@ -46,14 +45,27 @@
       unit = url.searchParams.get('utm_content') || unit;
       campaign = url.searchParams.get('utm_campaign') || campaign;
     } catch (_) { /* ignore bad hrefs */ }
-    window.va('event', {
-      name: 'PlexoClick',
-      data: {
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'plexo_click', {
         unit: unit,
         campaign: campaign,
-        page: location.pathname,
-      },
-    });
+        page_path: location.pathname,
+        link_url: anchor.href,
+        transport_type: 'beacon',
+      });
+    }
+
+    if (typeof window.va === 'function') {
+      window.va('event', {
+        name: 'PlexoClick',
+        data: {
+          unit: unit,
+          campaign: campaign,
+          page: location.pathname,
+        },
+      });
+    }
   }
 
   document.querySelectorAll('a[href*="useplexo.ai"]').forEach((a) => {
