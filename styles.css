@@ -92,11 +92,17 @@ a:hover .pk-btn.light { background: #dfe6ff; }
 .pk-brand img { border-radius: 6px; }
 .pk-sky-title { font-size: 34px; font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; margin: 26px 0 22px; }
 .pk-sky-title span { color: #8fa6ff; }
+.pk-sky.is-plan .pk-sky-title { font-size: 28px; margin: 20px 0 14px; }
+.pk-sky-copy { margin: 0 0 18px; font-family: var(--sans); font-size: 15px; line-height: 1.45; color: #bcc4d6; }
+.pk-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.pk-steps li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; font-family: var(--sans); font-size: 13px; line-height: 1.4; color: #c5cbe0; }
+.pk-steps b { display: block; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.pk-steps i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: rgba(26,75,255,.35); border: 1px solid rgba(143,166,255,.35); font-style: normal; font-family: var(--mono); font-size: 11px; font-weight: 500; color: #8fa6ff; flex-shrink: 0; }
 .pk-chat { display: grid; gap: 8px; font-size: 13px; line-height: 1.4; }
 .pk-chat p { margin: 0; padding: 10px 12px; border-radius: 10px; max-width: 88%; }
 .pk-chat .q { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
 .pk-chat .a { background: var(--plexo); justify-self: end; }
-.pk-sky-meta { font-size: 11px; color: #8790a6; margin: 12px 0 0; }
+.pk-sky-meta { font-size: 11px; color: #8790a6; margin: 14px 0 0; }
 .pk-sky .pk-btn { margin-top: auto; justify-content: center; }
 
 .pk-end { margin: 0 0 40px; }
