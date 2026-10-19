@@ -35,4 +35,28 @@
       form.innerHTML = '<p class="thanks">You\'re on the list.</p>';
     });
   });
+
+  // Plexo unit clicks → Vercel Web Analytics custom event "PlexoClick"
+  function trackPlexoClick(anchor) {
+    if (typeof window.va !== 'function') return;
+    let unit = 'unknown';
+    let campaign = 'unknown';
+    try {
+      const url = new URL(anchor.href);
+      unit = url.searchParams.get('utm_content') || unit;
+      campaign = url.searchParams.get('utm_campaign') || campaign;
+    } catch (_) { /* ignore bad hrefs */ }
+    window.va('event', {
+      name: 'PlexoClick',
+      data: {
+        unit: unit,
+        campaign: campaign,
+        page: location.pathname,
+      },
+    });
+  }
+
+  document.querySelectorAll('a[href*="useplexo.ai"]').forEach((a) => {
+    a.addEventListener('click', () => trackPlexoClick(a));
+  });
 })();
